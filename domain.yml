@@ -1,0 +1,52 @@
+version: "3.1"
+
+intents:
+  - chao_hoi
+  - hoi_gia_laptop
+  - hoi_bao_hanh
+  - goi_y_laptop
+
+responses:
+  utter_chao_hoi:
+    - text: "Chào bạn! Tôi có thể giúp gì cho bạn hôm nay?"
+  utter_gia_laptop:
+    - text: "Giá của laptop sẽ tùy thuộc vào thương hiệu và cấu hình. Bạn đang quan tâm dòng nào?"
+  utter_bao_hanh:
+    - text: "Laptop của chúng tôi có bảo hành từ 12-24 tháng tùy model. Bạn cần hỗ trợ gì thêm không?"
+
+slots:
+  category:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: category
+
+  price:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: price
+
+  ram:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: ram
+
+  screen_size:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: screen_size
+
+
+
+actions:
+  - utter_chao_hoi
+  - utter_gia_laptop
+  - utter_bao_hanh
+  - action_recommend_laptop
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,13 @@
+version: "3.1"
+
+rules:
+
+- rule: Gửi tin nhắn khi được hỏi về chatbot
+  steps:
+  - intent: bot_challenge
+  - action: utter_chao_hoi
+
+- rule: Gợi ý laptop
+  steps:
+    - intent: goi_y_laptop
+    - action: action_recommend_laptop

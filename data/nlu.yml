@@ -1,0 +1,37 @@
+version: "3.1"
+
+nlu:
+- intent: chao_hoi
+  examples: |
+    - Xin chào
+    - Chào bạn
+    - Hello
+    - Chào buổi sáng
+    - Chào buổi tối
+
+- intent: hoi_gia_laptop
+  examples: |
+    - Laptop Dell giá bao nhiêu?
+    - Máy tính Acer có giá thế nào?
+    - Tôi muốn biết giá của laptop Asus
+    - Cho tôi biết giá laptop Lenovo
+
+- intent: goi_y_laptop
+  examples: |
+    - Tôi cần một laptop cho [học tập](category)
+    - Gợi ý cho tôi một laptop [gaming](category)
+    - Mình muốn mua laptop giá dưới [20 triệu](price)
+    - Tôi cần laptop có [16GB RAM](ram)
+    - Tôi muốn laptop màn hình [15.6 inch](screen_size)
+
+- intent: hoi_bao_hanh
+  examples: |
+    - Laptop này bảo hành bao lâu?
+    - Chính sách bảo hành như thế nào?
+    - Tôi có thể bảo hành ở đâu?
+
+entities:
+  - category
+  - price
+  - ram
+  - screen_size
