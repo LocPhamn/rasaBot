@@ -1,0 +1,44 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-category",
+      "2": "I-category",
+      "3": "L-category",
+      "4": "U-category",
+      "5": "B-price",
+      "6": "I-price",
+      "7": "L-price",
+      "8": "U-price",
+      "9": "B-ram",
+      "10": "I-ram",
+      "11": "L-ram",
+      "12": "U-ram",
+      "13": "B-screen_size",
+      "14": "I-screen_size",
+      "15": "L-screen_size",
+      "16": "U-screen_size",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-category": 1,
+      "I-category": 2,
+      "L-category": 3,
+      "U-category": 4,
+      "B-price": 5,
+      "I-price": 6,
+      "L-price": 7,
+      "U-price": 8,
+      "B-ram": 9,
+      "I-ram": 10,
+      "L-ram": 11,
+      "U-ram": 12,
+      "B-screen_size": 13,
+      "I-screen_size": 14,
+      "L-screen_size": 15,
+      "U-screen_size": 16,
+      "O": 0
+    },
+    "num_tags": 17
+  }
+]

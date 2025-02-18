@@ -10,4 +10,4 @@ rules:
 - rule: Gợi ý laptop
   steps:
     - intent: goi_y_laptop
-    - action: action_recommend_laptop
+    - action: laptop_suggestion

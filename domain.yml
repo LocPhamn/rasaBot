@@ -14,12 +14,22 @@ responses:
   utter_bao_hanh:
     - text: "Laptop của chúng tôi có bảo hành từ 12-24 tháng tùy model. Bạn cần hỗ trợ gì thêm không?"
 
+entities:
+  - type
+  - price
+  - ram
+  - cpu
+  - gpu
+  - storage
+  - resolution
+  - screen
+
 slots:
-  category:
+  type:
     type: text
     mappings:
       - type: from_entity
-        entity: category
+        entity: type
 
   price:
     type: text
@@ -33,11 +43,36 @@ slots:
       - type: from_entity
         entity: ram
 
-  screen_size:
+  screen:
     type: text
     mappings:
       - type: from_entity
-        entity: screen_size
+        entity: screen
+
+  cpu:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: cpu
+
+  gpu:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: gpu
+
+  storage:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: storage
+
+  resolution:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: resolution
+
 
 
 
@@ -45,7 +80,7 @@ actions:
   - utter_chao_hoi
   - utter_gia_laptop
   - utter_bao_hanh
-  - action_recommend_laptop
+  - laptop_suggestion
 
 session_config:
   session_expiration_time: 60

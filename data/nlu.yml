@@ -18,11 +18,20 @@ nlu:
 
 - intent: goi_y_laptop
   examples: |
-    - Tôi cần một laptop cho [học tập](category)
-    - Gợi ý cho tôi một laptop [gaming](category)
+    - Tôi cần một laptop cho [office](type)
+    - Gợi ý cho tôi một laptop [gaming](type)
     - Mình muốn mua laptop giá dưới [20 triệu](price)
     - Tôi cần laptop có [16GB RAM](ram)
-    - Tôi muốn laptop màn hình [15.6 inch](screen_size)
+    - Tôi muốn laptop màn hình [15.6 inch](screen)
+    - Tôi cần laptop có [Intel Core i7](cpu) và [16GB RAM](ram)
+    - Gợi ý laptop có [NVIDIA RTX 3060](gpu) và [512GB SSD](storage)
+    - Tôi muốn laptop có [AMD Ryzen 5](cpu), [8GB RAM](ram), và [256GB SSD](storage)
+    - Tôi cần laptop màn hình [4K](resolution) và [Intel Core i5](cpu)
+    - Gợi ý laptop có [1TB HDD](storage), [NVIDIA GTX 1650](gpu), và [Full HD](resolution)
+    - Tôi muốn laptop có [Intel Core i9](cpu), [32GB RAM](ram), [2TB SSD](storage), và [QHD](resolution)
+    - Tôi cần laptop có [AMD Ryzen 7](cpu), [16GB RAM](ram), [512GB NVMe SSD](storage), và [Ultra HD](resolution)
+    - Gợi ý laptop có [NVIDIA RTX 3070](gpu), [1TB SSD](storage)
+    - Tôi muốn laptop có [AMD Ryzen 9](cpu), [8GB RAM](ram), [1TB HDD](storage), và [Full HD](resolution)
 
 - intent: hoi_bao_hanh
   examples: |
@@ -31,7 +40,11 @@ nlu:
     - Tôi có thể bảo hành ở đâu?
 
 entities:
-  - category
+  - type
   - price
   - ram
-  - screen_size
+  - cpu
+  - gpu
+  - storage
+  - resolution
+  - screen

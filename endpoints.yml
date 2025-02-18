@@ -17,6 +17,15 @@ action_endpoint:
 # By default the conversations are stored in memory.
 # https://rasa.com/docs/rasa/tracker-stores
 
+tracker_store:
+    type: SQL
+    dialect: mysql
+    url: "mysql+mysqlconnector://root:Locpro%401997@localhost:3306/ws_proj"
+    port: 3306
+    db: "es_proj"  # path to your db
+    username: "root"
+    password: "Locpro@1997"
+
 
 #tracker_store:
 #    type: redis
