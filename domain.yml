@@ -5,6 +5,7 @@ intents:
   - hoi_gia_laptop
   - hoi_bao_hanh
   - goi_y_laptop
+  - xoa_goi_y
 
 responses:
   utter_chao_hoi:
@@ -13,7 +14,8 @@ responses:
     - text: "Giá của laptop sẽ tùy thuộc vào thương hiệu và cấu hình. Bạn đang quan tâm dòng nào?"
   utter_bao_hanh:
     - text: "Laptop của chúng tôi có bảo hành từ 12-24 tháng tùy model. Bạn cần hỗ trợ gì thêm không?"
-
+  utter_cleared:
+    - text: "Đã xóa tất cả thông tin tìm kiếm. Bạn muốn bắt đầu lại từ đầu?"
 entities:
   - type
   - price
@@ -42,7 +44,6 @@ slots:
     mappings:
       - type: from_entity
         entity: ram
-
   screen:
     type: text
     mappings:
@@ -81,6 +82,7 @@ actions:
   - utter_gia_laptop
   - utter_bao_hanh
   - laptop_suggestion
+  - clear_slots
 
 session_config:
   session_expiration_time: 60

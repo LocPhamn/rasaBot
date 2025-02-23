@@ -18,7 +18,56 @@ nlu:
 
 - intent: goi_y_laptop
   examples: |
-    - Tôi cần một laptop cho [office](type)
+    # PRICE
+    - [15 triệu](price)
+    - [10k](price)
+    - [500 usd](price)
+    - [20tr](price)
+
+    # RAM
+    - [8GB](ram)
+    - [16G](ram)
+    - [32GB RAM](ram)
+    - [24 gigabyte](ram)
+
+    # CPU
+    - [Intel Core i5](cpu)
+    - [AMD Ryzen 7](cpu)
+    - [Intel Core i9](cpu)
+    - [Apple M2](cpu)
+
+    # GPU
+    - [NVIDIA RTX 3060](gpu)
+    - [NVIDIA RTX 3050](gpu)
+    - [AMD RX 6800](gpu)
+    - [NVIDIA GTX 1650](gpu)
+    - [NVIDIA GTX 1650](gpu)
+    
+
+    # STORAGE
+    - [512GB SSD](storage)
+    - [1TB HDD](storage)
+    - [256GB](storage)
+    - [2TB NVMe](storage)
+
+    # RESOLUTION
+    - [Full HD](resolution)
+    - [4K](resolution)
+    - [QHD](resolution)
+    - [1440p](resolution)
+
+    # SCREEN
+    - [15.6 inch](screen)
+    - [14"](screen)
+    - [17.3 in](screen)
+    - [13 inch](screen)
+    
+    # Particular Laptop
+    - tôi cần latop [gaming](type), [10 usd](price), [16gb ram](ram),[16 inch](screen),[Intel Core i7](cpu),[NVIDIA RTX 3060](gpu), [2tb ssd](storage),[full hd](resolution)
+    - Laptop [i7](cpu), [RTX 3060](gpu), [16GB](ram), giá [1200 đô](price)
+    - Cần máy [15.6 inch](screen_size), [SSD 1TB](storage), [Full HD](resolution)
+    
+    # Genaral Laptop
     - Gợi ý cho tôi một laptop [gaming](type)
     - Mình muốn mua laptop giá dưới [20 triệu](price)
     - Tôi cần laptop có [16GB RAM](ram)
@@ -38,6 +87,15 @@ nlu:
     - Laptop này bảo hành bao lâu?
     - Chính sách bảo hành như thế nào?
     - Tôi có thể bảo hành ở đâu?
+
+- intent: xoa_goi_y
+  examples: |
+    - clear
+    - reset
+    - xóa hết
+    - làm mới
+    - bắt đầu lại
+    - xóa thông tin
 
 entities:
   - type

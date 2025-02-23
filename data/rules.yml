@@ -11,3 +11,9 @@ rules:
   steps:
     - intent: goi_y_laptop
     - action: laptop_suggestion
+
+- rule: Xóa_gợi ý laptop
+  steps:
+    - intent: xoa_goi_y
+    - action: clear_slots
+    - action: utter_cleared
