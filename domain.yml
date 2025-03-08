@@ -2,21 +2,23 @@ version: "3.1"
 
 intents:
   - chao_hoi
-  - hoi_gia_laptop
   - hoi_bao_hanh
   - goi_y_laptop
   - xoa_goi_y
+  - cam_on
 
 responses:
   utter_chao_hoi:
     - text: "Chào bạn! Tôi có thể giúp gì cho bạn hôm nay?"
-  utter_gia_laptop:
-    - text: "Giá của laptop sẽ tùy thuộc vào thương hiệu và cấu hình. Bạn đang quan tâm dòng nào?"
   utter_bao_hanh:
     - text: "Laptop của chúng tôi có bảo hành từ 12-24 tháng tùy model. Bạn cần hỗ trợ gì thêm không?"
-  utter_cleared:
+  utter_load_lai:
     - text: "Đã xóa tất cả thông tin tìm kiếm. Bạn muốn bắt đầu lại từ đầu?"
+  utter_khong_co_gi:
+    - text: "Không có gì! Nếu bạn cần thêm thông tin, hãy cho tôi biết nhé."
+
 entities:
+  - name
   - type
   - price
   - ram
@@ -27,6 +29,12 @@ entities:
   - screen
 
 slots:
+  name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: name
+
   type:
     type: text
     mappings:
@@ -79,7 +87,6 @@ slots:
 
 actions:
   - utter_chao_hoi
-  - utter_gia_laptop
   - utter_bao_hanh
   - laptop_suggestion
   - clear_slots

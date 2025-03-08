@@ -20,6 +20,7 @@ class LaptopSuggestion(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         # Tham số nhận vào
+        name = tracker.get_slot("name")
         type = tracker.get_slot("type")
         price = tracker.get_slot("price")
         ram = tracker.get_slot("ram")
@@ -33,25 +34,31 @@ class LaptopSuggestion(Action):
         query = "SELECT p.product_name,c.price FROM product p JOIN configuration c ON p.idproduct = c.idproduct WHERE 1=1"
         params = {}
         response = ""
+
+        if name:
+            query += " AND (p.brand LIKE :name OR p.product_name LIKE :name)"
+            params["name"] = name
+            logger.info(f"Giá trị type nhận được: {name}")
+
         if type:
             query += " AND p.type = :type"
             params["type"] = type
             logger.info(f"Giá trị type nhận được: {type}")
 
         if price:
-            price_value = re.findall(r"\d+",price)[0]
+            price_value = re.findall(r"\d+",price)
             logger.info(f"Giá trị price nhận được: {price_value}")
 
             query += " AND c.price <= :price"
             params["price"] = price
         if ram:
-            numbers = re.findall(r'\d+', ram)[0]
+            numbers = re.findall(r'\d+', ram)
             logger.info(f"Giá trị ram nhận được: {numbers}")
 
             query += " AND c.ram = :ram"
             params["ram"] = numbers
         if screen:
-            numbers = re.findall(r'\d+', screen)[0]
+            numbers = re.findall(r'\d+', screen)
             logger.info(f"Giá trị screen nhận được: {screen}")
             query += " AND c.screen = :screen"
             params["screen"] = numbers
@@ -64,7 +71,7 @@ class LaptopSuggestion(Action):
             query += " AND c.gpu = :gpu"
             params["gpu"] = gpu
         if storage:
-            numbers = re.findall(r'\d+', storage)[0]
+            numbers = re.findall(r'\d+', storage)
             logger.info(f"Giá trị storage nhận được: {numbers}")
             query += " AND c.storage = :storage"
             params["storage"] = storage
@@ -83,7 +90,7 @@ class LaptopSuggestion(Action):
         if results:
             response = "Dưới đây là những laptop phù hợp:\n"
             for laptop in results:
-                response += f"- {laptop[0]} (Giá: {laptop[1]:,.0f} $)\n"
+                response += f"- {laptop[0]} (Giá: ${laptop[1]:,.0f})\n"
         else:
             response = "Xin lỗi, tôi không tìm thấy laptop phù hợp."
 

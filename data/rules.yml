@@ -7,13 +7,9 @@ rules:
   - intent: bot_challenge
   - action: utter_chao_hoi
 
-- rule: Gợi ý laptop
-  steps:
-    - intent: goi_y_laptop
-    - action: laptop_suggestion
 
 - rule: Xóa_gợi ý laptop
   steps:
     - intent: xoa_goi_y
     - action: clear_slots
-    - action: utter_cleared
+    - action: utter_load_lai
