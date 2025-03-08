@@ -1,0 +1,20 @@
+# Ignore Rasa cache and temporary files
+.rasa/
+
+# Ignore test files and folders
+tests/
+test.py
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore virtual environments
+venv/
+.env/
+
+# Ignore system-specific files
+.DS_Store
+Thumbs.db
