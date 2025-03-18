@@ -1,0 +1,112 @@
+version: "3.1"
+
+nlu:
+- intent: chao_hoi
+  examples: |
+    - Xin chào
+    - Chào bạn
+    - Hello
+    - Chào buổi sáng
+    - Chào buổi tối
+
+- intent: cam_on
+  examples: |
+    - Cảm ơn
+    - Cảm ơn bạn
+    - Thanks
+    - Cảm ơn nhiều
+    - Được rồi, cảm ơn
+
+- intent: goi_y_laptop
+  examples: |
+    # PRICE
+    - [15 triệu](price)
+    - [10k](price)
+    - [500 usd](price)
+    - [20tr](price)
+
+    # RAM
+    - [8GB](ram)
+    - [16G](ram)
+    - [32GB RAM](ram)
+    - [24 gigabyte](ram)
+
+    # CPU
+    - [Intel Core i5](cpu)
+    - [AMD Ryzen 7](cpu)
+    - [Intel Core i9](cpu)
+    - [Apple M2](cpu)
+
+    # GPU
+    - [NVIDIA RTX 3060](gpu)
+    - [NVIDIA RTX 3050](gpu)
+    - [AMD RX 6800](gpu)
+    - [NVIDIA GTX 1650](gpu)
+    - [NVIDIA GTX 1650](gpu)
+    
+
+    # STORAGE
+    - [512GB SSD](storage)
+    - [1TB HDD](storage)
+    - [256GB](storage)
+    - [2TB NVMe](storage)
+
+    # RESOLUTION
+    - [Full HD](resolution)
+    - [4K](resolution)
+    - [QHD](resolution)
+    - [1440p](resolution)
+
+    # SCREEN
+    - [15.6 inch](screen)
+    - [14"](screen)
+    - [17.3 in](screen)
+    - [13 inch](screen)
+    
+    # Particular Laptop
+    - tôi cần latop [gaming](type), [10 usd](price), [16gb ram](ram),[16 inch](screen),[Intel Core i7](cpu),[NVIDIA RTX 3060](gpu), [2tb ssd](storage),[full hd](resolution)
+    - Laptop [i7](cpu), [RTX 3060](gpu), [16GB](ram), giá [1200 đô](price)
+    - Cần máy [15.6 inch](screen_size), [SSD 1TB](storage), [Full HD](resolution)
+    
+    - Gợi ý cho tôi một laptop [gaming](type)
+    - Tìm cho tôi một laptop [office](type)
+    
+    - Mình muốn mua laptop giá dưới [20 triệu](price)
+    - Tôi cần laptop có [16GB RAM](ram)
+    
+    - Tôi muốn laptop màn hình [15.6 inch](screen)
+    
+    - Tôi cần laptop có [Intel Core i7](cpu) và [16GB RAM](ram)
+    - Gợi ý laptop có [NVIDIA RTX 3060](gpu) và [512GB SSD](storage)
+    - Tôi muốn laptop có [AMD Ryzen 5](cpu), [8GB RAM](ram), và [256GB SSD](storage)
+    - Tôi cần laptop màn hình [4K](resolution) và [Intel Core i5](cpu)
+    - Gợi ý laptop có [1TB HDD](storage), [NVIDIA GTX 1650](gpu), và [Full HD](resolution)
+    - Tôi muốn laptop có [Intel Core i9](cpu), [32GB RAM](ram), [2TB SSD](storage), và [QHD](resolution)
+    - Tôi cần laptop có [AMD Ryzen 7](cpu), [16GB RAM](ram), [512GB NVMe SSD](storage), và [Ultra HD](resolution)
+    - Gợi ý laptop có [NVIDIA RTX 3070](gpu), [1TB SSD](storage)
+    - Tôi muốn laptop có [AMD Ryzen 9](cpu), [8GB RAM](ram), [1TB HDD](storage), và [Full HD](resolution)
+
+- intent: hoi_bao_hanh
+  examples: |
+    - Laptop này bảo hành bao lâu?
+    - Chính sách bảo hành như thế nào?
+    - Tôi có thể bảo hành ở đâu?
+
+- intent: xoa_goi_y
+  examples: |
+    - clear
+    - reset
+    - xóa hết
+    - làm mới
+    - bắt đầu lại
+    - xóa thông tin
+
+entities:
+  - type
+  - price
+  - ram
+  - cpu
+  - gpu
+  - storage
+  - resolution
+  - screen

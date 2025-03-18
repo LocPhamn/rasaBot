@@ -1,0 +1,15 @@
+version: "3.1"
+
+rules:
+
+- rule: Gửi tin nhắn khi được hỏi về chatbot
+  steps:
+  - intent: bot_challenge
+  - action: utter_chao_hoi
+
+
+- rule: Xóa_gợi ý laptop
+  steps:
+    - intent: xoa_goi_y
+    - action: clear_slots
+    - action: utter_load_lai

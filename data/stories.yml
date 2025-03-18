@@ -1,0 +1,28 @@
+version: "3.1"
+
+stories:
+
+- story: Chào hỏi đơn giản
+  steps:
+  - intent: chao_hoi
+  - action: utter_chao_hoi
+
+- story: Hỏi về bảo hành
+  steps:
+  - intent: hoi_bao_hanh
+  - action: utter_bao_hanh
+
+- story: Hỏi giá laptop sau khi chào hỏi
+  steps:
+  - intent: chao_hoi
+  - action: utter_chao_hoi
+
+
+- story: Gợi ý laptop
+  steps:
+  - intent: chao_hoi
+  - action: utter_chao_hoi
+  - intent: goi_y_laptop
+  - action: laptop_suggestion
+  - intent: cam_on
+  - action: utter_khong_co_gi

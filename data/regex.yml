@@ -1,0 +1,18 @@
+regex_features:
+#  - name: "price"
+#    pattern: "\\d+\\s?(usd|\\$)"  # Bắt giá như "10 usd", "$500"
+#  - name: "ram"
+#    pattern: "\\d+\\s?gb\\s?ram"  # Bắt RAM như "16gb ram"
+  - pattern: "(RTX|GTX|RTX\\s?\\d{4})"  # Bắt GPU như "RTX 3060"
+  - name: "gpu"
+  - pattern: "\\d+(\\.\\d+)?\\s?inch"
+    name: "screen_size"
+
+  - pattern: "\\d+\\s*(triệu|usd|đô|k|vnd|nghìn|usd|\\$)"
+    name: "price"
+  - pattern: "\\d+\\s*(GB|gb|g|gb ram)"
+    name: "ram"
+  - pattern: "\\d+\\s*(tb ssd|gb ssd|TB SSD|GB SSD)"
+    name: "storage"
+  - pattern: "\\d+\\s*(inch|in|')"
+    name: "screen"

@@ -1,0 +1,89 @@
+version: "3.1"
+
+intents:
+  - chao_hoi
+  - hoi_bao_hanh
+  - goi_y_laptop
+  - xoa_goi_y
+  - cam_on
+
+responses:
+  utter_chao_hoi:
+    - text: "Chào bạn! Tôi có thể giúp gì cho bạn hôm nay?"
+  utter_bao_hanh:
+    - text: "Laptop của chúng tôi có bảo hành từ 12-24 tháng tùy model. Bạn cần hỗ trợ gì thêm không?"
+  utter_load_lai:
+    - text: "Đã xóa tất cả thông tin tìm kiếm. Bạn muốn bắt đầu lại từ đầu?"
+  utter_khong_co_gi:
+    - text: "Không có gì! Nếu bạn cần thêm thông tin, hãy cho tôi biết nhé."
+
+entities:
+  - type
+  - price
+  - ram
+  - cpu
+  - gpu
+  - storage
+  - resolution
+  - screen
+
+slots:
+  type:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: type
+
+  price:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: price
+
+  ram:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: ram
+  screen:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: screen
+
+  cpu:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: cpu
+
+  gpu:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: gpu
+
+  storage:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: storage
+
+  resolution:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: resolution
+
+
+
+
+actions:
+  - utter_chao_hoi
+  - utter_bao_hanh
+  - laptop_suggestion
+  - clear_slots
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
